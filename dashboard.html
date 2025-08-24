@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katılımcı Paneli - Huawei Ar-Ge Kodlama Maratonu 2025</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <nav class="sidebar">
+        <div class="sidebar-header">
+            <div class="logo">
+                <img src="https://www.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png" alt="Huawei Logo">
+            </div>
+        </div>
+
+        <ul class="sidebar-menu">
+            <li class="menu-item active">
+                <a href="#dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Gösterge</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#profile">
+                    <i class="fas fa-user"></i>
+                    <span>Profil</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#team">
+                    <i class="fas fa-users"></i>
+                    <span>Takım</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#messages">
+                    <i class="fas fa-envelope"></i>
+                    <span>Mesajlar</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#announcements">
+                    <i class="fas fa-bell"></i>
+                    <span>Duyurular</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#rules">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Kurallar</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#submission">
+                    <i class="fas fa-upload"></i>
+                    <span>Oyun Teslimi</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#awards">
+                    <i class="fas fa-trophy"></i>
+                    <span>Ödüller</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#calendar">
+                    <i class="fas fa-calendar-alt"></i>
+                    <span>Takvim</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#jury">
+                    <i class="fas fa-gavel"></i>
+                    <span>Jüri & Mentörler</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#sponsors">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Sponsorlar</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#about">
+                    <i class="fas fa-info-circle"></i>
+                    <span>Hakkımızda</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#faq">
+                    <i class="fas fa-question-circle"></i>
+                    <span>SSS</span>
+                </a>
+            </li>
+            <li class="menu-item">
+                <a href="#contact">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>İletişim</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <div class="logo-text">
+                    <h2>Huawei Ar-Ge Kodlama Maratonu</h2>
+                    <p>Bulut Bilişim & Yapay Zeka Odaklı Yetenek Geliştirme Programı</p>
+                </div>
+            </div>
+
+            <div class="header-center">
+                <div class="countdown-card">
+                    <h4>Kalan Süre</h4>
+                    <div class="countdown-timer">
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="days">26</span>
+                            <span class="countdown-label">Gün</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="hours">10</span>
+                            <span class="countdown-label">Saat</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="minutes">39</span>
+                            <span class="countdown-label">Dak</span>
+                        </div>
+                        <div class="countdown-item">
+                            <span class="countdown-number" id="seconds">34</span>
+                            <span class="countdown-label">Sn</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <div class="user-info">
+                    <div class="user-avatar">
+                        <span>EC</span>
+                    </div>
+                    <div class="user-details">
+                        <h4>Enes Cıkcık</h4>
+                        <p>Katılımcı</p>
+                    </div>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        <span>Çıkış Yap</span>
+                    </button>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <!-- Welcome Section -->
+            <section class="welcome-section">
+                <div class="welcome-card">
+                    <div class="welcome-content">
+                        <h1>Merhaba Enes Cıkcık, hoş geldiniz! 👋</h1>
+                        <p>Profilinizi, takımınızı, duyuruları ve proje teslimini buradan yönetebilirsiniz.</p>
+                    </div>
+                    <div class="welcome-stats">
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Takım Durumu</h4>
+                                <p>1/4 üye</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Yeni Mesajlar</h4>
+                                <p>0 okunmamış</p>
+                            </div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="stat-info">
+                                <h4>Kalan Süre</h4>
+                                <p>27 gün</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Access Section -->
+            <section class="quick-access-section">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2>Hızlı Erişim</h2>
+                        <p>Sık kullanılan sayfalar ve özellikler</p>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                </div>
+
+                <div class="quick-access-grid">
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-upload"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Proje Teslimi</h3>
+                            <p>Projenizi yükleyin</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-bell"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Duyurular</h3>
+                            <p>Güncel haberler</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Takım</h3>
+                            <p>Ekip yönetimi</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Mesajlar</h3>
+                            <p>İletişim merkezi</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Kurallar</h3>
+                            <p>Yarışma kuralları</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+
+                    <div class="quick-card">
+                        <div class="card-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="card-content">
+                            <h3>Takvim</h3>
+                            <p>Etkinlik programı</p>
+                            <a href="#" class="card-link">Aç →</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Status Summary Section -->
+            <section class="status-summary-section">
+                <div class="section-header">
+                    <div class="header-content">
+                        <h2>Durum Özeti</h2>
+                        <p>Takım ve bildirim durumunuz</p>
+                    </div>
+                    <div class="header-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                </div>
+
+                <div class="status-grid">
+                    <div class="status-card">
+                        <div class="status-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="status-content">
+                            <h3>Takım</h3>
+                            <p>1/4 üye tamamlandı</p>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="status-content">
+                            <h3>Yeni Mesaj</h3>
+                            <p>0 okunmamış mesaj</p>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="status-content">
+                            <h3>Teslime Kalan</h3>
+                            <p>27 gün kaldı</p>
+                        </div>
+                    </div>
+
+                    <div class="status-card">
+                        <div class="status-icon">
+                            <i class="fas fa-check-circle"></i>
+                        </div>
+                        <div class="status-content">
+                            <h3>Genel Durum</h3>
+                            <p>Başvuru tamamlandı</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>İletişim - Huawei Ar-Ge Kodlama Maratonu</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png" alt="Huawei Logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="dashboard.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="submission.html"><i class="fas fa-upload"></i>Oyun Teslimi</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="announcements.html"><i class="fas fa-bullhorn"></i>Duyurular</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="team.html"><i class="fas fa-users"></i>Takım</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="messages.html"><i class="fas fa-envelope"></i>Mesajlar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="rules.html"><i class="fas fa-book"></i>Kurallar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="calendar.html"><i class="fas fa-calendar"></i>Takvim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="jury.html"><i class="fas fa-gavel"></i>Jüri & Mentörler</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="sponsors.html"><i class="fas fa-handshake"></i>Sponsorlar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="about.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="faq.html"><i class="fas fa-question-circle"></i>SSS</a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="contact.html"><i class="fas fa-phone"></i>İletişim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html"><i class="fas fa-user"></i>Profil</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Çıkış Yap
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="logo-text">
+                        <h2>İletişim</h2>
+                        <p>Bizimle iletişime geçin</p>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <label>Gün</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <label>Saat</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <label>Dakika</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <label>Saniye</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name">Katılımcı</span>
+                            <span class="user-role">Takım Lideri</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <div class="page-header">
+                    <h1>İletişim</h1>
+                    <p>Maraton hakkında sorularınız için bizimle iletişime geçin</p>
+                </div>
+
+                <div class="contact-container">
+                    <!-- Contact Form -->
+                    <div class="contact-form-section">
+                        <h3>Mesaj Gönder</h3>
+                        <form class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Ad Soyad *</label>
+                                <input type="text" id="name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="email">E-posta *</label>
+                                <input type="email" id="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="subject">Konu *</label>
+                                <select id="subject" required>
+                                    <option value="">Konu seçin</option>
+                                    <option value="general">Genel Bilgi</option>
+                                    <option value="technical">Teknik Destek</option>
+                                    <option value="registration">Kayıt Sorunu</option>
+                                    <option value="other">Diğer</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="message">Mesaj *</label>
+                                <textarea id="message" rows="5" required></textarea>
+                            </div>
+                            
+                            <button type="submit" class="submit-btn">
+                                <i class="fas fa-paper-plane"></i>
+                                Mesaj Gönder
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Contact Info -->
+                    <div class="contact-info-section">
+                        <h3>İletişim Bilgileri</h3>
+                        <div class="contact-info">
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>E-posta</h4>
+                                    <p>maraton@huawei.com</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Telefon</h4>
+                                    <p>+90 212 555 0123</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Adres</h4>
+                                    <p>Huawei Türkiye<br>Levent, İstanbul</p>
+                                </div>
+                            </div>
+                            
+                            <div class="contact-item">
+                                <div class="contact-icon">
+                                    <i class="fas fa-clock"></i>
+                                </div>
+                                <div class="contact-details">
+                                    <h4>Çalışma Saatleri</h4>
+                                    <p>Pazartesi - Cuma<br>09:00 - 18:00</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+    <script>
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            if (name && email && subject && message) {
+                showNotification('Mesajınız başarıyla gönderildi!', 'success');
+                this.reset();
+            } else {
+                showNotification('Lütfen tüm alanları doldurun!', 'error');
+            }
+        });
+    </script>
+</body>
+</html>

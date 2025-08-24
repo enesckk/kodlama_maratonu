@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duyurular - Huawei Ar-Ge Kodlama Maratonu</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png" alt="Huawei Logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="dashboard.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="submission.html"><i class="fas fa-upload"></i>Oyun Teslimi</a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="announcements.html"><i class="fas fa-bullhorn"></i>Duyurular</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="team.html"><i class="fas fa-users"></i>Takım</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="messages.html"><i class="fas fa-envelope"></i>Mesajlar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="rules.html"><i class="fas fa-book"></i>Kurallar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="calendar.html"><i class="fas fa-calendar"></i>Takvim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="jury.html"><i class="fas fa-gavel"></i>Jüri & Mentörler</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="sponsors.html"><i class="fas fa-handshake"></i>Sponsorlar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="about.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="faq.html"><i class="fas fa-question-circle"></i>SSS</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html"><i class="fas fa-phone"></i>İletişim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html"><i class="fas fa-user"></i>Profil</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Çıkış Yap
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="logo-text">
+                        <h2>Duyurular</h2>
+                        <p>Önemli güncellemeler ve haberler</p>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <label>Gün</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <label>Saat</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <label>Dakika</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <label>Saniye</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name">Katılımcı</span>
+                            <span class="user-role">Takım Lideri</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <div class="page-header">
+                    <h1>Duyurular</h1>
+                    <p>Maraton ile ilgili en güncel duyurular ve haberler</p>
+                </div>
+
+                <div class="announcements-container">
+                    <!-- Featured Announcement -->
+                    <div class="featured-announcement">
+                        <div class="announcement-card featured">
+                            <div class="announcement-header">
+                                <div class="announcement-badge">
+                                    <i class="fas fa-star"></i>
+                                    Öne Çıkan
+                                </div>
+                                <div class="announcement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    15 Aralık 2024
+                                </div>
+                            </div>
+                            <h3>Final Kampı Tarihleri Açıklandı!</h3>
+                            <p>Huawei Ar-Ge Kodlama Maratonu 2025 final kampı 22-25 Eylül 2025 tarihlerinde BTK Merkez Yerleşkesi'nde gerçekleştirilecektir. Tüm finalistlerin katılımı zorunludur.</p>
+                            <div class="announcement-tags">
+                                <span class="tag important">Önemli</span>
+                                <span class="tag event">Etkinlik</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Regular Announcements -->
+                    <div class="announcements-list">
+                        <div class="announcement-card">
+                            <div class="announcement-header">
+                                <div class="announcement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    10 Aralık 2024
+                                </div>
+                            </div>
+                            <h3>Proje Teslim Süresi Uzatıldı</h3>
+                            <p>Katılımcıların talepleri doğrultusunda proje teslim süresi 3 Eylül 2025 saat 15:00'a kadar uzatılmıştır.</p>
+                            <div class="announcement-tags">
+                                <span class="tag deadline">Teslim</span>
+                            </div>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-header">
+                                <div class="announcement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    5 Aralık 2024
+                                </div>
+                            </div>
+                            <h3>Mentörlük Seansları Başlıyor</h3>
+                            <p>Huawei Ar-Ge mühendislerinden mentörlük seansları 20 Aralık 2024 tarihinden itibaren başlayacaktır. Kayıtlar açılmıştır.</p>
+                            <div class="announcement-tags">
+                                <span class="tag mentorship">Mentörlük</span>
+                            </div>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-header">
+                                <div class="announcement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    1 Aralık 2024
+                                </div>
+                            </div>
+                            <h3>Huawei Cloud Eğitimleri Tamamlandı</h3>
+                            <p>Tüm katılımcılar için ücretsiz Huawei Cloud eğitimleri tamamlanmıştır. Sertifika alan katılımcılar final aşamasına geçebilir.</p>
+                            <div class="announcement-tags">
+                                <span class="tag training">Eğitim</span>
+                            </div>
+                        </div>
+
+                        <div class="announcement-card">
+                            <div class="announcement-header">
+                                <div class="announcement-date">
+                                    <i class="fas fa-calendar"></i>
+                                    25 Kasım 2024
+                                </div>
+                            </div>
+                            <h3>Takım Oluşturma Süreci</h3>
+                            <p>Final aşamasına kalan 30 katılımcı 3'er kişilik takımlar oluşturacaktır. Takım oluşturma süreci 1 Aralık'ta başlayacaktır.</p>
+                            <div class="announcement-tags">
+                                <span class="tag team">Takım</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

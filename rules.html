@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kurallar - Huawei Ar-Ge Kodlama Maratonu</title>
+    <link rel="stylesheet" href="dashboard-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="https://www.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png" alt="Huawei Logo">
+            </div>
+            
+            <nav class="sidebar-nav">
+                <ul class="menu">
+                    <li class="menu-item">
+                        <a href="dashboard.html"><i class="fas fa-home"></i>Ana Sayfa</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="submission.html"><i class="fas fa-upload"></i>Oyun Teslimi</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="announcements.html"><i class="fas fa-bullhorn"></i>Duyurular</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="team.html"><i class="fas fa-users"></i>Takım</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="messages.html"><i class="fas fa-envelope"></i>Mesajlar</a>
+                    </li>
+                    <li class="menu-item active">
+                        <a href="rules.html"><i class="fas fa-book"></i>Kurallar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="calendar.html"><i class="fas fa-calendar"></i>Takvim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="jury.html"><i class="fas fa-gavel"></i>Jüri & Mentörler</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="sponsors.html"><i class="fas fa-handshake"></i>Sponsorlar</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="about.html"><i class="fas fa-info-circle"></i>Hakkımızda</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="faq.html"><i class="fas fa-question-circle"></i>SSS</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="contact.html"><i class="fas fa-phone"></i>İletişim</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="profile.html"><i class="fas fa-user"></i>Profil</a>
+                    </li>
+                </ul>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Çıkış Yap
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="header">
+                <div class="header-left">
+                    <div class="logo-text">
+                        <h2>Maraton Kuralları</h2>
+                        <p>Yarışma kuralları ve yönergeler</p>
+                    </div>
+                </div>
+
+                <div class="header-center">
+                    <div class="countdown">
+                        <div class="countdown-item">
+                            <span id="days">00</span>
+                            <label>Gün</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="hours">00</span>
+                            <label>Saat</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="minutes">00</span>
+                            <label>Dakika</label>
+                        </div>
+                        <div class="countdown-item">
+                            <span id="seconds">00</span>
+                            <label>Saniye</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="header-right">
+                    <div class="user-info">
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="user-details">
+                            <span class="user-name">Katılımcı</span>
+                            <span class="user-role">Takım Lideri</span>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content -->
+            <div class="content">
+                <div class="page-header">
+                    <h1>Maraton Kuralları</h1>
+                    <p>Huawei Ar-Ge Kodlama Maratonu 2025 kuralları ve yönergeleri</p>
+                </div>
+
+                <div class="rules-container">
+                    <!-- General Rules -->
+                    <div class="rules-section">
+                        <h3>Genel Kurallar</h3>
+                        <div class="rules-list">
+                            <div class="rule-item">
+                                <div class="rule-number">1</div>
+                                <div class="rule-content">
+                                    <h4>Katılım Koşulları</h4>
+                                    <p>Üniversite öğrencileri ve yeni mezunlar katılabilir. BTK Akademi üzerinden başvuru yapılması zorunludur.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">2</div>
+                                <div class="rule-content">
+                                    <h4>Huawei Cloud Hesabı</h4>
+                                    <p>Tüm katılımcıların ücretsiz Huawei Cloud hesabı oluşturması ve belirtilen eğitimleri tamamlaması gerekir.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">3</div>
+                                <div class="rule-content">
+                                    <h4>Sertifika Gerekliliği</h4>
+                                    <p>En az bir Huawei Cloud sertifikası alınması zorunludur. Sertifikası olmayanlar başvuru bitimine kadar alabilir.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Competition Rules -->
+                    <div class="rules-section">
+                        <h3>Yarışma Kuralları</h3>
+                        <div class="rules-list">
+                            <div class="rule-item">
+                                <div class="rule-number">4</div>
+                                <div class="rule-content">
+                                    <h4>Takım Oluşturma</h4>
+                                    <p>Finale kalan 30 aday 3'er kişilik takımlar oluşturur. Takım üyeleri dengeli roller seçmelidir.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">5</div>
+                                <div class="rule-content">
+                                    <h4>Proje Geliştirme</h4>
+                                    <p>96 saat boyunca proje geliştirilir. Huawei Cloud servisleri kullanımı zorunludur.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">6</div>
+                                <div class="rule-content">
+                                    <h4>Değerlendirme Kriterleri</h4>
+                                    <p>%40 teknik proje, %40 jüri sunumu, %20 ara görevler olarak değerlendirilir.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Technical Rules -->
+                    <div class="rules-section">
+                        <h3>Teknik Kurallar</h3>
+                        <div class="rules-list">
+                            <div class="rule-item">
+                                <div class="rule-number">7</div>
+                                <div class="rule-content">
+                                    <h4>Teknoloji Kullanımı</h4>
+                                    <p>Huawei Cloud servisleri (ECS, OBS, RDS, ModelArts, DevCloud) kullanımı zorunludur.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">8</div>
+                                <div class="rule-content">
+                                    <h4>Kod Paylaşımı</h4>
+                                    <p>Tüm kodlar GitHub üzerinde paylaşılmalı ve açık kaynak lisansı altında olmalıdır.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="rule-item">
+                                <div class="rule-number">9</div>
+                                <div class="rule-content">
+                                    <h4>Dokümantasyon</h4>
+                                    <p>Proje dokümantasyonu ve README dosyası hazırlanması zorunludur.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="dashboard-script.js"></script>
+</body>
+</html>

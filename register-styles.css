@@ -1,0 +1,473 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: #1a1a1a;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Background Pattern */
+.background-pattern {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(230, 0, 18, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(230, 0, 18, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 40% 40%, rgba(230, 0, 18, 0.05) 0%, transparent 50%);
+    z-index: -1;
+}
+
+/* Register Container */
+.register-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 1000px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(230, 0, 18, 0.1);
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo Section */
+.logo-section {
+    background: linear-gradient(135deg, #e60012 0%, #cc0010 100%);
+    padding: 3rem 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+}
+
+.logo-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="logo-pattern" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M 20 0 L 0 0 0 20" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23logo-pattern)"/></svg>');
+    opacity: 0.3;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    height: 50px;
+    width: auto;
+    filter: brightness(0) invert(1);
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: white;
+    margin: 0;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+/* Register Form Container */
+.register-form-container {
+    padding: 3rem 2rem;
+    background: rgba(26, 26, 26, 0.8);
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.form-header h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 0.5rem;
+}
+
+.form-header p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.95rem;
+}
+
+/* Form Styles */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.form-group label {
+    font-weight: 500;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.input-group {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.input-group i {
+    position: absolute;
+    left: 15px;
+    color: #e60012;
+    font-size: 1.1rem;
+    z-index: 2;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 15px 15px 15px 45px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    color: white;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Maraton ID specific styling */
+.input-group input[name="marathonId"] {
+    border-color: rgba(230, 0, 18, 0.3);
+    background: rgba(230, 0, 18, 0.05);
+}
+
+.input-group input[name="marathonId"]:focus {
+    border-color: #e60012;
+    background: rgba(230, 0, 18, 0.1);
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.2);
+}
+
+.input-group input[name="marathonId"]::placeholder {
+    color: rgba(230, 0, 18, 0.6);
+}
+
+/* Maraton ID label styling */
+.form-group label[for="marathonId"] {
+    color: #e60012;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Maraton ID icon styling */
+.input-group .fa-id-card {
+    color: #e60012;
+    font-size: 1.1rem;
+}
+
+/* Email field specific styling */
+.input-group input[type="email"] {
+    border-color: rgba(230, 0, 18, 0.3);
+    background: rgba(230, 0, 18, 0.05);
+}
+
+.input-group input[type="email"]:focus {
+    border-color: #e60012;
+    background: rgba(230, 0, 18, 0.1);
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.2);
+}
+
+.input-group input[type="email"]::placeholder {
+    color: rgba(230, 0, 18, 0.6);
+}
+
+/* Email label styling */
+.form-group label[for="email"] {
+    color: #e60012;
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+/* Email icon styling */
+.input-group .fa-envelope {
+    color: #e60012;
+    font-size: 1.1rem;
+}
+
+/* Form help text */
+.form-help {
+    display: block;
+    font-size: 0.8rem;
+    color: rgba(230, 0, 18, 0.8);
+    margin-top: 0.5rem;
+    font-style: italic;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #e60012;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 0 0 3px rgba(230, 0, 18, 0.1);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: color 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #e60012;
+}
+
+/* Form Options */
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.checkbox-container input[type="checkbox"] {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark {
+    background: #e60012;
+    border-color: #e60012;
+}
+
+.checkbox-container input[type="checkbox"]:checked + .checkmark::after {
+    content: '✓';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.terms-link {
+    color: #e60012;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.terms-link:hover {
+    text-decoration: underline;
+}
+
+/* Register Button */
+.register-btn {
+    background: linear-gradient(135deg, #e60012 0%, #cc0010 100%);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.register-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 0, 18, 0.3);
+    background: linear-gradient(135deg, #cc0010 0%, #b3000e 100%);
+}
+
+/* Divider */
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.divider span {
+    background: rgba(26, 26, 26, 0.8);
+    padding: 0 1rem;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.9rem;
+}
+
+/* Social Register */
+.social-register {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.social-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 12px 20px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(230, 0, 18, 0.3);
+    transform: translateY(-1px);
+}
+
+.social-btn.google:hover {
+    border-color: #4285f4;
+}
+
+.social-btn.github:hover {
+    border-color: #333;
+}
+
+/* Login Link */
+.login-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.login-link p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.login-link a {
+    color: #e60012;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .register-container {
+        grid-template-columns: 1fr;
+        margin: 1rem;
+        border-radius: 15px;
+    }
+    
+    .logo-section {
+        padding: 2rem 1.5rem;
+    }
+    
+    .register-form-container {
+        padding: 2rem 1.5rem;
+    }
+    
+
+    
+    .form-header h2 {
+        font-size: 1.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .register-container {
+        margin: 0.5rem;
+        border-radius: 10px;
+    }
+    
+    .logo-section,
+    .register-form-container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .info-section {
+        padding: 1rem;
+    }
+    
+    .form-header h2 {
+        font-size: 1.5rem;
+    }
+    
+    .input-group input {
+        padding: 12px 12px 12px 40px;
+    }
+    
+    .register-btn {
+        padding: 12px 24px;
+    }
+}

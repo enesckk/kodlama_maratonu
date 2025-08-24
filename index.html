@@ -17,12 +17,17 @@
                 <span>Ar-Ge Kodlama Maratonu</span>
             </div>
             <ul class="nav-menu">
-                <li><a href="#home">Ana Sayfa</a></li>
-                <li><a href="#about">Hakkında</a></li>
-                <li><a href="#schedule">Takvim</a></li>
-                <li><a href="#apply">Başvuru</a></li>
-                <li><a href="#faq">SSS</a></li>
+                <li class="mobile-auth">
+                    <a href="register.html" class="btn-register-mobile">Kayıt Ol</a>
+                    <a href="login.html" class="btn-login-mobile">Giriş Yap</a>
+                    <a href="https://bulut.btk.gov.tr/app/tr-TR/Form/Paylas/BTKBulut/8c960cce-e35e-4073-b648-5055d5f62d92" target="_blank" class="btn-apply-mobile">Maratona Başvur</a>
+                </li>
             </ul>
+            <div class="nav-auth">
+                <a href="register.html" class="btn-register">Kayıt Ol</a>
+                <a href="login.html" class="btn-login">Giriş Yap</a>
+                <a href="https://bulut.btk.gov.tr/app/tr-TR/Form/Paylas/BTKBulut/8c960cce-e35e-4073-b648-5055d5f62d92" target="_blank" class="btn-apply">Maratona Başvur</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -52,7 +57,7 @@
                     </div>
                 </div>
                 <div class="hero-buttons">
-                    <a href="#apply" class="btn btn-primary">Hemen Başvur</a>
+                    <a href="https://bulut.btk.gov.tr/app/tr-TR/Form/Paylas/BTKBulut/8c960cce-e35e-4073-b648-5055d5f62d92" target="_blank" class="btn btn-primary">Maratona Başvur</a>
                     <a href="#about" class="btn btn-secondary">Detayları İncele</a>
                 </div>
             </div>
@@ -372,56 +377,75 @@
         <div class="container">
             <div class="apply-content">
                 <div class="apply-text">
-                    <h2>Hemen Başvur</h2>
-                    <p>Geleceğin bulut teknolojilerini şekillendirmek için seni bekliyoruz!</p>
-                    <div class="apply-steps">
-                        <div class="step">
-                            <span class="step-number">1</span>
-                            <span class="step-text">Huawei Cloud hesabı oluştur</span>
+                    <h2>Maratona Başvur</h2>
+                    <p>BTK Akademi üzerinden resmi başvuru formunu doldurarak maratona katılabilirsiniz!</p>
+                    <div class="apply-info">
+                        <div class="info-item">
+                            <i class="fas fa-calendar-alt"></i>
+                            <div>
+                                <h4>Son Başvuru Tarihi</h4>
+                                <p>3 Eylül 2025, 15:00 (TRT)</p>
+                            </div>
                         </div>
-                        <div class="step">
-                            <span class="step-number">2</span>
-                            <span class="step-text">Eğitimleri tamamla</span>
+                        <div class="info-item">
+                            <i class="fas fa-users"></i>
+                            <div>
+                                <h4>Katılım Koşulları</h4>
+                                <p>Üniversite öğrencileri ve yeni mezunlar</p>
+                            </div>
                         </div>
-                        <div class="step">
-                            <span class="step-number">3</span>
-                            <span class="step-text">BTK Akademi'den başvur</span>
+                        <div class="info-item">
+                            <i class="fas fa-certificate"></i>
+                            <div>
+                                <h4>Gerekli Sertifika</h4>
+                                <p>En az bir Huawei Cloud sertifikası</p>
+                            </div>
                         </div>
+                    </div>
+                    <div class="apply-requirements">
+                        <h3>Başvuru Öncesi Gereksinimler:</h3>
+                        <ul>
+                            <li>Huawei Cloud hesabı oluşturulmuş olmalı</li>
+                            <li>Gerekli eğitimler tamamlanmış olmalı</li>
+                            <li>WhatsApp kanalına kayıt olunmuş olmalı</li>
+                            <li>KVKK aydınlatma metni okunmuş olmalı</li>
+                        </ul>
                     </div>
                 </div>
                 <div class="apply-form">
-                    <form id="applicationForm">
-                        <div class="form-group">
-                            <label for="name">Ad Soyad</label>
-                            <input type="text" id="name" name="name" required>
+                    <div class="form-card">
+                        <div class="form-header">
+                            <i class="fas fa-file-alt"></i>
+                            <h3>BTK Akademi Başvuru Formu</h3>
                         </div>
-                        <div class="form-group">
-                            <label for="email">E-posta</label>
-                            <input type="email" id="email" name="email" required>
+                        <p>Resmi başvuru için BTK Akademi platformuna yönlendirileceksiniz. Formda aşağıdaki bilgiler istenecektir:</p>
+                        <div class="form-fields">
+                            <div class="field-item">
+                                <i class="fas fa-user"></i>
+                                <span>Kişisel Bilgiler (TC, Ad, Soyad, İletişim)</span>
+                            </div>
+                            <div class="field-item">
+                                <i class="fas fa-graduation-cap"></i>
+                                <span>Eğitim Bilgileri (Üniversite, Bölüm)</span>
+                            </div>
+                            <div class="field-item">
+                                <i class="fas fa-certificate"></i>
+                                <span>Huawei Cloud Sertifika Bilgileri</span>
+                            </div>
+                            <div class="field-item">
+                                <i class="fas fa-trophy"></i>
+                                <span>Deneyim Bilgileri (Hackathon/Ideathon)</span>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label for="university">Üniversite</label>
-                            <input type="text" id="university" name="university" required>
+                        <a href="https://bulut.btk.gov.tr/app/tr-TR/Form/Paylas/BTKBulut/8c960cce-e35e-4073-b648-5055d5f62d92" target="_blank" class="btn btn-primary btn-full">
+                            <i class="fas fa-external-link-alt"></i>
+                            BTK Akademi'de Başvur
+                        </a>
+                        <div class="form-note">
+                            <i class="fas fa-info-circle"></i>
+                            <p>Başvuru formu BTK Akademi platformunda açılacaktır. Giriş yapmanız gerekebilir.</p>
                         </div>
-                        <div class="form-group">
-                            <label for="graduation">Mezuniyet Durumu</label>
-                            <select id="graduation" name="graduation" required>
-                                <option value="">Seçiniz</option>
-                                <option value="student">Öğrenci</option>
-                                <option value="graduate">Yeni Mezun</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label for="experience">Deneyim Seviyesi</label>
-                            <select id="experience" name="experience" required>
-                                <option value="">Seçiniz</option>
-                                <option value="beginner">Başlangıç</option>
-                                <option value="intermediate">Orta</option>
-                                <option value="advanced">İleri</option>
-                            </select>
-                        </div>
-                        <button type="submit" class="btn btn-primary btn-full">Başvuru Yap</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>

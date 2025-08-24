@@ -80,22 +80,25 @@
                 </div>
 
                 <div class="header-center">
-                    <div class="countdown">
-                        <div class="countdown-item">
-                            <span id="days">00</span>
-                            <label>Gün</label>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="hours">00</span>
-                            <label>Saat</label>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="minutes">00</span>
-                            <label>Dakika</label>
-                        </div>
-                        <div class="countdown-item">
-                            <span id="seconds">00</span>
-                            <label>Saniye</label>
+                    <div class="countdown-card">
+                        <h4>Maraton Bitimine Kalan Süre</h4>
+                        <div class="countdown-timer">
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="days">00</span>
+                                <span class="countdown-label">Gün</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="hours">00</span>
+                                <span class="countdown-label">Saat</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="minutes">00</span>
+                                <span class="countdown-label">Dakika</span>
+                            </div>
+                            <div class="countdown-item">
+                                <span class="countdown-number" id="seconds">00</span>
+                                <span class="countdown-label">Saniye</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -106,10 +109,14 @@
                             <i class="fas fa-user"></i>
                         </div>
                         <div class="user-details">
-                            <span class="user-name">Katılımcı</span>
-                            <span class="user-role">Takım Lideri</span>
+                            <h4>Katılımcı</h4>
+                            <p>Takım Lideri</p>
                         </div>
                     </div>
+                    <button class="logout-btn" onclick="logout()">
+                        <i class="fas fa-sign-out-alt"></i>
+                        Çıkış
+                    </button>
                 </div>
             </header>
 
@@ -266,6 +273,45 @@
 
     <script src="dashboard-script.js"></script>
     <script>
+        // Countdown Timer
+        function initCountdown() {
+            const deadline = new Date('September 3, 2025 15:00:00').getTime();
+            
+            function updateCountdown() {
+                const now = new Date().getTime();
+                const distance = deadline - now;
+                
+                const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                
+                document.getElementById('days').textContent = days;
+                document.getElementById('hours').textContent = hours;
+                document.getElementById('minutes').textContent = minutes;
+                document.getElementById('seconds').textContent = seconds;
+                
+                if (distance < 0) {
+                    clearInterval(countdownInterval);
+                    document.getElementById('days').textContent = '0';
+                    document.getElementById('hours').textContent = '0';
+                    document.getElementById('minutes').textContent = '0';
+                    document.getElementById('seconds').textContent = '0';
+                }
+            }
+            
+            updateCountdown();
+            const countdownInterval = setInterval(updateCountdown, 1000);
+        }
+
+        // Logout function
+        function logout() {
+            if (confirm('Çıkış yapmak istediğinizden emin misiniz?')) {
+                window.location.href = 'index.html';
+            }
+        }
+
+        // Edit field function
         function editField(button) {
             const field = button.parentElement;
             const input = field.querySelector('input');
@@ -281,6 +327,11 @@
                 button.innerHTML = '<i class="fas fa-save"></i>';
             }
         }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            initCountdown();
+        });
     </script>
 </body>
 </html>

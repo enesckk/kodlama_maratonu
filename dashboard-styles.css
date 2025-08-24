@@ -5,6 +5,13 @@
     box-sizing: border-box;
 }
 
+/* Global Logo Styles - Huawei Red Color */
+.logo img,
+.nav-logo img,
+.sidebar-header .logo img {
+    filter: none !important;
+}
+
 body {
     font-family: 'Inter', sans-serif;
     background: linear-gradient(135deg, #1a1a1a 0%, #2c3e50 50%, #34495e 100%);

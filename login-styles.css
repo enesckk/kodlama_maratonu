@@ -76,7 +76,7 @@ body {
 .logo img {
     height: 60px;
     width: auto;
-    filter: brightness(0) invert(1);
+    filter: none;
     margin-bottom: 1rem;
 }
 

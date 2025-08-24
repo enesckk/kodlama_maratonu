@@ -75,22 +75,19 @@ body {
     margin-bottom: 1rem;
     position: relative;
     z-index: 2;
-    background: rgba(255, 255, 255, 0.1);
-    padding: 2rem;
-    border-radius: 15px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    background: rgba(255, 255, 255, 0.05);
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .logo img {
     height: 50px;
     width: auto;
     filter: none;
-    background: rgba(255, 255, 255, 0.15);
-    padding: 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.08);
+    padding: 0.8rem;
+    border-radius: 8px;
 }
 
 .logo h1 {

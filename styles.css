@@ -31,9 +31,41 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(26, 26, 26, 0.98);
+    background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 25px rgba(230, 0, 18, 0.2);
+    box-shadow: 0 4px 25px rgba(0, 0, 0, 0.1);
+}
+
+.navbar.scrolled .nav-logo {
+    color: #333;
+}
+
+.navbar.scrolled .nav-logo img {
+    filter: none;
+}
+
+.navbar.scrolled .nav-menu a {
+    color: #333;
+}
+
+.navbar.scrolled .nav-menu a.active {
+    color: #e60012;
+}
+
+.navbar.scrolled .btn-login,
+.navbar.scrolled .btn-register {
+    color: #333;
+}
+
+.navbar.scrolled .nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e60012;
+    border-radius: 1px;
 }
 
 .nav-container {
@@ -43,6 +75,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 2rem;
 }
 
 .nav-logo {
@@ -63,39 +96,61 @@ body {
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 2.5rem;
+    gap: 2rem;
     align-items: center;
     margin: 0;
     padding: 0;
+    flex: 1;
+    justify-content: center;
 }
 
 .nav-menu a {
     text-decoration: none;
     color: white;
     font-weight: 500;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
     transition: all 0.3s ease;
     padding: 0.5rem 0;
     position: relative;
+    white-space: nowrap;
 }
 
 .nav-menu a:hover {
     color: #e60012;
 }
 
+.nav-menu a.active {
+    color: #e60012;
+    font-weight: 600;
+    position: relative;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #e60012;
+    border-radius: 1px;
+}
+
 .nav-menu a::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -8px;
     left: 0;
-    width: 0;
+    width: 100%;
     height: 2px;
     background: #e60012;
-    transition: width 0.3s ease;
+    border-radius: 1px;
+    transition: all 0.3s ease;
+    transform: scaleX(0);
 }
 
 .nav-menu a:hover::after {
-    width: 100%;
+    transform: scaleX(1);
 }
 
 
@@ -103,17 +158,19 @@ body {
 .nav-auth {
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
+    flex-shrink: 0;
 }
 
 .btn-login {
-    padding: 10px 20px;
+    padding: 8px 16px;
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
+    line-height: 1;
 }
 
 .btn-login:hover {
@@ -122,13 +179,14 @@ body {
 }
 
 .btn-register {
-    padding: 10px 20px;
+    padding: 8px 16px;
     color: white;
     text-decoration: none;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     transition: all 0.3s ease;
     border-bottom: 2px solid transparent;
+    line-height: 1;
 }
 
 .btn-register:hover {
@@ -137,16 +195,17 @@ body {
 }
 
 .btn-apply {
-    padding: 12px 28px;
+    padding: 10px 20px;
     background: #e60012;
     color: white;
     text-decoration: none;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     border-radius: 6px;
     transition: all 0.3s ease;
     border: 2px solid #e60012;
-    box-shadow: 0 2px 8px rgba(230, 0, 18, 0.2);
+    box-shadow: 0 2px 8px rgba(230, 0, 18, 0.3);
+    line-height: 1;
 }
 
 .btn-apply:hover {
@@ -169,7 +228,7 @@ body {
 .hamburger span {
     width: 25px;
     height: 3px;
-    background: white;
+    background: #333;
     transition: all 0.3s ease;
     border-radius: 2px;
 }
@@ -193,12 +252,24 @@ body {
 /* Hero Section */
 .hero {
     min-height: 100vh;
-    background: linear-gradient(135deg, #e60012 0%, #d10011 15%, #b8000f 30%, #2c3e50 50%, #34495e 70%, #2c3e50 85%, #e60012 100%);
+    background: linear-gradient(135deg, #e60012 0%, #d10011 20%, #b8000f 40%, #2c3e50 60%, #34495e 80%, #e60012 100%);
     display: flex;
     align-items: center;
     padding-top: 80px;
     position: relative;
     overflow: hidden;
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="particles" width="50" height="50" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="rgba(255,255,255,0.1)"/><circle cx="10" cy="10" r="0.5" fill="rgba(255,255,255,0.05)"/><circle cx="40" cy="40" r="0.8" fill="rgba(255,255,255,0.08)"/></pattern></defs><rect width="100" height="100" fill="url(%23particles)"/></svg>');
+    animation: particleFloat 20s ease-in-out infinite;
+    opacity: 0.6;
 }
 
 .hero::before {
@@ -225,23 +296,38 @@ body {
 }
 
 .hero-content h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    color: white;
-    margin-bottom: 1rem;
-    line-height: 1.2;
+    font-size: 4rem;
+    font-weight: 800;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out;
 }
 
 .hero-subtitle {
-    font-size: 1.3rem;
-    color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    line-height: 1.6;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 0.2s both;
 }
 
 .hero-stats {
     display: flex;
-    gap: 2rem;
-    margin-bottom: 2rem;
+    gap: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 0.4s both;
 }
 
 .stat {
@@ -250,9 +336,24 @@ body {
 
 .stat-number {
     display: block;
-    font-size: 2.5rem;
-    font-weight: 700;
+    font-size: 3rem;
+    font-weight: 800;
     color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    animation: countUp 2s ease-out;
+    position: relative;
+}
+
+.stat-number::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 3px;
+    background: linear-gradient(90deg, #e60012, #ff6b6b);
+    border-radius: 2px;
 }
 
 .stat-label {
@@ -262,7 +363,10 @@ body {
 
 .hero-buttons {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    position: relative;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 0.6s both;
 }
 
 .btn {
@@ -280,9 +384,26 @@ body {
 }
 
 .btn-primary {
-    background: #e60012;
+    background: linear-gradient(135deg, #e60012 0%, #d10011 100%);
     color: white;
     border: 2px solid #e60012;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-primary:hover::before {
+    left: 100%;
 }
 
 .btn-primary:hover {
@@ -326,16 +447,65 @@ body {
 
 .floating-card {
     background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(15px);
-    padding: 2.5rem;
-    border-radius: 25px;
+    backdrop-filter: blur(20px);
+    padding: 3rem 2.5rem;
+    border-radius: 30px;
     text-align: center;
     color: white;
     border: 2px solid rgba(255, 255, 255, 0.3);
-    animation: float 6s ease-in-out infinite;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    animation: float 6s ease-in-out infinite, glow 3s ease-in-out infinite alternate;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
     position: relative;
     overflow: hidden;
+    z-index: 2;
+    min-width: 320px;
+}
+
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: white;
+    z-index: 2;
+    animation: fadeInUp 1s ease-out 1s both;
+}
+
+.scroll-arrow {
+    width: 2px;
+    height: 30px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 1px;
+    position: relative;
+    animation: scrollBounce 2s ease-in-out infinite;
+}
+
+.scroll-arrow::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    border-top: 6px solid rgba(255, 255, 255, 0.6);
+}
+
+.scroll-indicator span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 500;
+}
+
+@keyframes scrollBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
 }
 
 .floating-card::before {
@@ -380,6 +550,38 @@ body {
 @keyframes float {
     0%, 100% { transform: translateY(0px); }
     50% { transform: translateY(-20px); }
+}
+
+@keyframes particleFloat {
+    0%, 100% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(180deg); }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); }
+    50% { box-shadow: 0 20px 40px rgba(230, 0, 18, 0.3); }
 }
 
 /* Countdown Section */
@@ -610,8 +812,10 @@ body {
 
 .requirements-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
 }
 
 .requirement-card {
@@ -620,6 +824,8 @@ body {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     transition: all 0.3s ease;
     border: 1px solid #e9ecef;
+    height: fit-content;
+    align-self: start;
 }
 
 .requirement-card:hover {
@@ -678,7 +884,7 @@ body {
 }
 
 .accordion-item.active .requirement-content {
-    max-height: 1000px;
+    max-height: 300px;
     padding: 0 2rem 2rem 2rem;
     border-top: 1px solid #e9ecef;
 }
@@ -1096,8 +1302,21 @@ body {
 /* Apply Section */
 .apply {
     padding: 80px 0;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 50%, #dee2e6 100%);
+    color: #333;
+    position: relative;
+    overflow: hidden;
+}
+
+.apply::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+    opacity: 0.3;
 }
 
 .apply-content {
@@ -1105,18 +1324,24 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 4rem;
     align-items: start;
+    position: relative;
+    z-index: 2;
 }
 
 .apply-text h2 {
     font-size: 2.5rem;
     margin-bottom: 1rem;
-    color: white;
+    color: #333;
+    position: relative;
+    z-index: 2;
 }
 
 .apply-text p {
     font-size: 1.1rem;
     margin-bottom: 2rem;
-    opacity: 0.9;
+    color: #666;
+    position: relative;
+    z-index: 2;
 }
 
 .apply-info {
@@ -1131,10 +1356,20 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1.2rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     border-radius: 10px;
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(230, 0, 18, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.info-item:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(230, 0, 18, 0.15);
+    border-color: rgba(230, 0, 18, 0.2);
 }
 
 .info-item i {
@@ -1147,24 +1382,35 @@ body {
 .info-item h4 {
     font-size: 1.1rem;
     margin-bottom: 0.3rem;
-    color: white;
+    color: #333;
 }
 
 .info-item p {
     margin: 0;
-    opacity: 0.9;
+    color: #666;
     font-size: 0.95rem;
 }
 
 .apply-requirements {
-    background: rgba(255, 255, 255, 0.1);
+    background: white;
     padding: 1.5rem;
     border-radius: 10px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(230, 0, 18, 0.1);
+    position: relative;
+    z-index: 2;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.apply-requirements:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(230, 0, 18, 0.15);
+    border-color: rgba(230, 0, 18, 0.2);
 }
 
 .apply-requirements h3 {
-    color: white;
+    color: #333;
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -1179,7 +1425,7 @@ body {
     padding: 0.5rem 0;
     padding-left: 1.5rem;
     position: relative;
-    opacity: 0.9;
+    color: #666;
 }
 
 .apply-requirements li::before {
@@ -1439,6 +1685,26 @@ body {
     font-weight: 600;
 }
 
+.footer-map {
+    margin-top: 1rem;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.footer-map:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.footer-map iframe {
+    width: 100%;
+    height: 150px;
+    border: none;
+    border-radius: 8px;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-menu {
@@ -1453,80 +1719,28 @@ body {
         display: flex;
     }
     
-    .nav-menu.active {
+        .nav-menu.active {
         display: flex;
         flex-direction: column;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: #1a1a1a;
-        border-bottom: 2px solid #e60012;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid rgba(230, 0, 18, 0.1);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         padding: 1.5rem;
     }
     
-    .mobile-auth {
-        margin-top: 1.5rem;
-        padding-top: 1.5rem;
-        border-top: 1px solid rgba(230, 0, 18, 0.3);
-        display: flex;
-        flex-direction: column;
-        gap: 0.8rem;
+    .nav-menu.active a {
+        color: #333;
+        padding: 0.8rem 0;
+        border-bottom: 1px solid rgba(230, 0, 18, 0.1);
     }
     
-    .btn-login-mobile,
-    .btn-register-mobile,
-    .btn-apply-mobile {
-        padding: 12px 20px;
-        text-decoration: none;
-        font-weight: 500;
-        border-radius: 6px;
-        text-align: center;
-        transition: all 0.3s ease;
-        font-size: 0.9rem;
-    }
-    
-    .btn-login-mobile {
-        color: white;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .btn-login-mobile:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #e60012;
-        border-color: rgba(230, 0, 18, 0.5);
-        transform: translateY(-1px);
-    }
-    
-
-    
-    .btn-register-mobile {
-        color: white;
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-    }
-    
-    .btn-register-mobile:hover {
-        background: rgba(255, 255, 255, 0.1);
-        color: #e60012;
-        border-color: rgba(230, 0, 18, 0.5);
-        transform: translateY(-1px);
-    }
-    
-    .btn-apply-mobile {
-        background: #e60012;
-        color: white;
-        border: 2px solid #e60012;
-        box-shadow: 0 2px 8px rgba(230, 0, 18, 0.2);
-    }
-    
-    .btn-apply-mobile:hover {
-        background: #cc0010;
-        border-color: #cc0010;
-        transform: translateY(-2px);
-        box-shadow: 0 4px 15px rgba(230, 0, 18, 0.4);
+    .nav-menu.active a:last-child {
+        border-bottom: none;
     }
     
     .hero-container {
@@ -1570,9 +1784,21 @@ body {
     }
     
     .about-grid,
-    .requirements-grid,
     .prizes-grid {
         grid-template-columns: 1fr;
+    }
+    
+    .requirements-grid {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+    }
+    
+    .footer-map {
+        margin-top: 0.5rem;
+    }
+    
+    .footer-map iframe {
+        height: 120px;
     }
 }
 

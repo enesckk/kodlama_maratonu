@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initSmoothScrolling();
     initFormValidation();
     initNavbarScroll();
+    initActiveNavLink();
 });
 
 // Countdown Timer
@@ -99,6 +100,12 @@ function initMobileMenu() {
         const navLinks = document.querySelectorAll('.nav-menu a');
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
+                // Remove active class from all links
+                navLinks.forEach(navLink => navLink.classList.remove('active'));
+                // Add active class to clicked link
+                link.classList.add('active');
+                
+                // Close mobile menu
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
             });
@@ -124,6 +131,13 @@ function initSmoothScrolling() {
                     top: offsetTop,
                     behavior: 'smooth'
                 });
+                
+                // Update active nav link after scroll completes
+                setTimeout(() => {
+                    const allNavLinks = document.querySelectorAll('.nav-menu a');
+                    allNavLinks.forEach(navLink => navLink.classList.remove('active'));
+                    this.classList.add('active');
+                }, 500);
             }
         });
     });
@@ -177,6 +191,48 @@ function initNavbarScroll() {
             navbar.classList.remove('scrolled');
         }
     });
+}
+
+// Active Navigation Link based on Scroll Position
+function initActiveNavLink() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-menu a');
+    
+    function updateActiveLink() {
+        const scrollPos = window.scrollY + 100; // Offset for navbar height
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+                // Remove active class from all links
+                navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to corresponding link
+                const activeLink = document.querySelector(`.nav-menu a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
+            }
+        });
+        
+        // Handle home section (when at top)
+        if (scrollPos < 200) {
+            navLinks.forEach(link => link.classList.remove('active'));
+            const homeLink = document.querySelector('.nav-menu a[href="#home"]');
+            if (homeLink) {
+                homeLink.classList.add('active');
+            }
+        }
+    }
+    
+    // Update on scroll
+    window.addEventListener('scroll', updateActiveLink);
+    
+    // Initial call
+    updateActiveLink();
 }
 
 // Notification System

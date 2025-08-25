@@ -45,16 +45,70 @@ function initLoginForm() {
                 return;
             }
             
+            // Demo admin credentials
+            const demoAdmin = {
+                email: 'admin@huawei-marathon.org',
+                password: 'admin123',
+                role: 'admin'
+            };
+            
+            // Demo user credentials
+            const demoUser = {
+                email: 'user@example.com',
+                password: 'user123',
+                role: 'user'
+            };
+            
+            // Demo credentials info
+            const demoInfo = document.createElement('div');
+            demoInfo.className = 'demo-info';
+            demoInfo.innerHTML = `
+                <h3>Demo Hesaplar</h3>
+                <div class="demo-credentials">
+                    <div class="credential-item">
+                        <strong>Admin:</strong> admin@huawei-marathon.org / admin123
+                    </div>
+                    <div class="credential-item">
+                        <strong>Kullanıcı:</strong> user@example.com / user123
+                    </div>
+                </div>
+            `;
+            
+            // Add demo info to form if not already present
+            if (!document.querySelector('.demo-info')) {
+                const form = document.querySelector('.login-form');
+                form.parentNode.insertBefore(demoInfo, form);
+            }
+            
+            // Check credentials
+            let userRole = null;
+            
+            if (email === demoAdmin.email && password === demoAdmin.password) {
+                userRole = 'admin';
+            } else if (email === demoUser.email && password === demoUser.password) {
+                userRole = 'user';
+            } else {
+                showNotification('E-posta veya şifre hatalı. Lütfen tekrar deneyin.', 'error');
+                return;
+            }
+            
             // Simulate login process
             showNotification('Giriş yapılıyor...', 'info');
             
             // Simulate API call delay
             setTimeout(() => {
-                showNotification('Giriş başarılı! Dashboard\'a yönlendiriliyorsunuz...', 'success');
+                const redirectUrl = userRole === 'admin' ? 'admin/dashboard.html' : 'dashboard.html';
+                const roleText = userRole === 'admin' ? 'Admin Paneli' : 'Dashboard';
                 
-                // Redirect to dashboard after success
+                showNotification(`Giriş başarılı! ${roleText}'ne yönlendiriliyorsunuz...`, 'success');
+                
+                // Store user role in sessionStorage
+                sessionStorage.setItem('userRole', userRole);
+                sessionStorage.setItem('userEmail', email);
+                
+                // Redirect based on role
                 setTimeout(() => {
-                    window.location.href = 'dashboard.html';
+                    window.location.href = redirectUrl;
                 }, 1500);
             }, 2000);
         });

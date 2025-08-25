@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Huawei Ar-Ge Kodlama Maratonu 2025</title>
+    <link rel="stylesheet" href="admin-styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="admin-navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="https://www.huawei.com/-/media/corporate/images/home/logo/huawei_logo.png" alt="Huawei Logo">
+                <span>Admin Panel</span>
+            </div>
+            <div class="nav-user">
+                <span class="user-email" id="userEmail">admin@huawei-marathon.org</span>
+                <button class="logout-btn" onclick="logout()">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Çıkış
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-section="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#applications" class="nav-item" data-section="applications">
+                    <i class="fas fa-file-alt"></i>
+                    <span>Başvurular</span>
+                </a>
+                <a href="#users" class="nav-item" data-section="users">
+                    <i class="fas fa-users"></i>
+                    <span>Kullanıcılar</span>
+                </a>
+                <a href="#teams" class="nav-item" data-section="teams">
+                    <i class="fas fa-user-friends"></i>
+                    <span>Takımlar</span>
+                </a>
+                <a href="#settings" class="nav-item" data-section="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Ayarlar</span>
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Content Area -->
+        <main class="content">
+            <!-- Dashboard Section -->
+            <section id="dashboard" class="content-section active">
+                <div class="section-header">
+                    <h1>Admin Dashboard</h1>
+                    <p>Huawei Ar-Ge Kodlama Maratonu 2025 Yönetim Paneli</p>
+                </div>
+
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Toplam Başvuru</h3>
+                            <p class="stat-number">247</p>
+                            <span class="stat-change positive">+12 bu hafta</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Aktif Kullanıcı</h3>
+                            <p class="stat-number">189</p>
+                            <span class="stat-change positive">+8 bu hafta</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Oluşturulan Takım</h3>
+                            <p class="stat-number">63</p>
+                            <span class="stat-change positive">+5 bu hafta</span>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="stat-content">
+                            <h3>Kalan Süre</h3>
+                            <p class="stat-number">15 gün</p>
+                            <span class="stat-change neutral">Başvuru devam ediyor</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Applications -->
+                <div class="content-grid">
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Son Başvurular</h2>
+                            <a href="#applications" class="view-all">Tümünü Gör</a>
+                        </div>
+                        <div class="applications-list">
+                            <div class="application-item">
+                                <div class="app-info">
+                                    <h4>Ahmet Yılmaz</h4>
+                                    <p>ahmet.yilmaz@example.com</p>
+                                    <span class="app-date">2 saat önce</span>
+                                </div>
+                                <div class="app-status pending">Beklemede</div>
+                            </div>
+                            <div class="application-item">
+                                <div class="app-info">
+                                    <h4>Ayşe Demir</h4>
+                                    <p>ayse.demir@example.com</p>
+                                    <span class="app-date">4 saat önce</span>
+                                </div>
+                                <div class="app-status approved">Onaylandı</div>
+                            </div>
+                            <div class="application-item">
+                                <div class="app-info">
+                                    <h4>Mehmet Kaya</h4>
+                                    <p>mehmet.kaya@example.com</p>
+                                    <span class="app-date">6 saat önce</span>
+                                </div>
+                                <div class="app-status pending">Beklemede</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="content-card">
+                        <div class="card-header">
+                            <h2>Hızlı İşlemler</h2>
+                        </div>
+                        <div class="quick-actions">
+                            <button class="action-btn">
+                                <i class="fas fa-plus"></i>
+                                Yeni Kullanıcı Ekle
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-file-export"></i>
+                                Rapor İndir
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-bell"></i>
+                                Duyuru Gönder
+                            </button>
+                            <button class="action-btn">
+                                <i class="fas fa-cog"></i>
+                                Ayarları Düzenle
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Applications Section -->
+            <section id="applications" class="content-section">
+                <div class="section-header">
+                    <h1>Başvuru Yönetimi</h1>
+                    <p>Tüm başvuruları görüntüleyin ve yönetin</p>
+                </div>
+                
+                <!-- Filters -->
+                <div class="filters-section">
+                    <div class="filter-group">
+                        <label>Durum:</label>
+                        <select id="statusFilter">
+                            <option value="">Tümü</option>
+                            <option value="pending">Beklemede</option>
+                            <option value="approved">Onaylandı</option>
+                            <option value="rejected">Reddedildi</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label>Ara:</label>
+                        <input type="text" id="searchFilter" placeholder="İsim, e-posta veya proje adı...">
+                    </div>
+                    <button class="filter-btn" onclick="applyFilters()">
+                        <i class="fas fa-filter"></i>
+                        Filtrele
+                    </button>
+                </div>
+
+                <!-- Applications Table -->
+                <div class="content-card">
+                    <div class="table-container">
+                        <table class="applications-table">
+                            <thead>
+                                <tr>
+                                    <th>Başvuru No</th>
+                                    <th>Kullanıcı</th>
+                                    <th>Proje Adı</th>
+                                    <th>Teknolojiler</th>
+                                    <th>Takım Boyutu</th>
+                                    <th>Durum</th>
+                                    <th>Başvuru Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="applicationsTableBody">
+                                <!-- Applications will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Users Section -->
+            <section id="users" class="content-section">
+                <div class="section-header">
+                    <h1>Kullanıcı Yönetimi</h1>
+                    <p>Sistem kullanıcılarını yönetin</p>
+                </div>
+                
+                <!-- User Stats -->
+                <div class="user-stats">
+                    <div class="stat-item">
+                        <span class="stat-number" id="totalUsers">0</span>
+                        <span class="stat-label">Toplam Kullanıcı</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="activeUsers">0</span>
+                        <span class="stat-label">Aktif Kullanıcı</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number" id="pendingUsers">0</span>
+                        <span class="stat-label">Bekleyen Kullanıcı</span>
+                    </div>
+                </div>
+
+                <!-- Users Table -->
+                <div class="content-card">
+                    <div class="table-container">
+                        <table class="users-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Ad Soyad</th>
+                                    <th>E-posta</th>
+                                    <th>Üniversite</th>
+                                    <th>Bölüm</th>
+                                    <th>Sınıf</th>
+                                    <th>Durum</th>
+                                    <th>Kayıt Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="usersTableBody">
+                                <!-- Users will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Teams Section -->
+            <section id="teams" class="content-section">
+                <div class="section-header">
+                    <h1>Takım Yönetimi</h1>
+                    <p>Oluşturulan takımları görüntüleyin</p>
+                </div>
+                
+                <!-- Teams Table -->
+                <div class="content-card">
+                    <div class="table-container">
+                        <table class="teams-table">
+                            <thead>
+                                <tr>
+                                    <th>Takım ID</th>
+                                    <th>Takım Adı</th>
+                                    <th>Üyeler</th>
+                                    <th>Proje</th>
+                                    <th>Durum</th>
+                                    <th>Oluşturulma Tarihi</th>
+                                    <th>İşlemler</th>
+                                </tr>
+                            </thead>
+                            <tbody id="teamsTableBody">
+                                <!-- Teams will be loaded here -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Settings Section -->
+            <section id="settings" class="content-section">
+                <div class="section-header">
+                    <h1>Sistem Ayarları</h1>
+                    <p>Panel ayarlarını düzenleyin</p>
+                </div>
+                <div class="content-card">
+                    <div id="settingsContainer">
+                        <!-- Settings will be loaded here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="demo-data.js"></script>
+    <script src="admin-script.js"></script>
+</body>
+</html>
